@@ -17,7 +17,7 @@
     comboMessage: '¡Hola Cave Store! Quiero armar un combo de streaming. ¿Me pasan el precio?',
 
     serviceMessages: {
-      netflix: '¡Hola Cave Store! Quiero consultar disponibilidad y precio de Netflix Premium.',
+      netflix: '¡Hola Cave Store! Quiero Netflix Premium. ¿Tienen perfil privado (33 Bs) o compartido (27 Bs) disponible?',
       prime: '¡Hola Cave Store! Quiero consultar disponibilidad de Prime Video.',
       youtube: '¡Hola Cave Store! Quiero consultar disponibilidad de YouTube Premium.',
       disney: '¡Hola Cave Store! Quiero consultar disponibilidad de Disney+.',
@@ -28,7 +28,7 @@
 
     // Canales que va pasando la tele del inicio
     channels: [
-      { name: 'Netflix Premium', price: 'desde 35 Bs/mes', img: 'assets/images/netflix.webp' },
+      { name: 'Netflix Premium', price: 'desde 27 Bs/mes', img: 'assets/images/netflix.webp' },
       { name: 'Prime Video', price: 'desde 20 Bs/mes', img: 'assets/images/prime.webp' },
       { name: 'YouTube Premium', price: 'desde 20 Bs/mes', img: 'assets/images/youtube.webp' },
       { name: 'Disney+', price: 'desde 25 Bs/mes', img: 'assets/images/disney.webp' },
@@ -208,7 +208,21 @@
     const count = $('#combo-count');
     const label = $('#combo-count-label');
     const note = $('#combo-note');
+    const presets = $$('.combo-preset');
     if (!inputs.length || !send) return;
+
+    presets.forEach((b) => b.addEventListener('click', () => {
+      const want = b.dataset.combo.split('|');
+      inputs.forEach((i) => {
+        const on = want.includes(i.value);
+        if (i.checked !== on) {
+          i.checked = on;
+          const chip = i.closest('.combo-chip');
+          chip.classList.remove('pop'); void chip.offsetWidth; chip.classList.add('pop');
+        }
+      });
+      update();
+    }));
 
     const update = () => {
       const chosen = inputs.filter((i) => i.checked);
@@ -219,18 +233,23 @@
       count.classList.remove('bump'); void count.offsetWidth; count.classList.add('bump');
       label.textContent = n === 1 ? 'plataforma elegida' : 'plataformas elegidas';
 
+      const key = chosen.map((i) => i.value).sort().join('|');
+      const preset = presets.find((b) => b.dataset.combo.split('|').sort().join('|') === key);
+      presets.forEach((b) => b.classList.toggle('active', b === preset));
+
       if (n === 0) note.textContent = 'Elige al menos dos para armar un combo.';
       else if (n === 1) note.textContent = 'Elige una más para que sea combo.';
-      else note.textContent = `Por separado serían desde ${sum} Bs/mes. En combo te damos precio especial.`;
+      else if (preset) note.innerHTML = `Precio combo: <strong>${preset.dataset.price} Bs/mes</strong> (por separado ${preset.dataset.separate} Bs).`;
+      else note.textContent = `Por separado serían ${sum} Bs/mes. Escríbenos y te damos precio especial.`;
 
       const ready = n >= 2;
       send.classList.toggle('is-disabled', !ready);
       send.setAttribute('aria-disabled', String(!ready));
 
       const names = chosen.map((i) => i.value).join(', ');
-      const msg = ready
-        ? `¡Hola Cave Store! Quiero armar un combo con: ${names}. ¿Cuál sería el precio especial?`
-        : CONFIG.comboMessage;
+      const msg = !ready ? CONFIG.comboMessage
+        : preset ? `¡Hola Cave Store! Quiero el combo ${names} a ${preset.dataset.price} Bs/mes. ¿Está disponible?`
+        : `¡Hola Cave Store! Quiero armar un combo con: ${names}. ¿Cuál sería el precio especial?`;
       send.href = waUrl(msg);
     };
 
