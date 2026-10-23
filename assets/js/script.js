@@ -20,7 +20,7 @@
       netflix: '¡Hola Cave Store! Quiero Netflix Premium. ¿Tienen perfil privado (33 Bs) o compartido (27 Bs) disponible?',
       prime: '¡Hola Cave Store! Quiero consultar disponibilidad de Prime Video.',
       youtube: '¡Hola Cave Store! Quiero consultar disponibilidad de YouTube Premium.',
-      disney: '¡Hola Cave Store! Quiero consultar disponibilidad de Disney+.',
+      disney: '¡Hola Cave Store! Quiero un perfil de Disney+ (30 Bs). ¿Tienen disponible?',
       paramount: '¡Hola Cave Store! Quiero consultar disponibilidad de Paramount+.',
       crunchyroll: '¡Hola Cave Store! Quiero consultar disponibilidad de Crunchyroll.',
       spotify: '¡Hola Cave Store! Quiero consultar disponibilidad de Spotify Premium.'
@@ -31,7 +31,7 @@
       { name: 'Netflix Premium', price: 'desde 27 Bs/mes', img: 'assets/images/netflix.webp' },
       { name: 'Prime Video', price: 'desde 20 Bs/mes', img: 'assets/images/prime.webp' },
       { name: 'YouTube Premium', price: 'desde 20 Bs/mes', img: 'assets/images/youtube.webp' },
-      { name: 'Disney+', price: 'desde 25 Bs/mes', img: 'assets/images/disney.webp' },
+      { name: 'Disney+', price: 'desde 30 Bs/mes', img: 'assets/images/disney.webp' },
       { name: 'Paramount+', price: 'desde 20 Bs/mes', img: 'assets/images/paramount.webp' },
       { name: 'Crunchyroll', price: 'desde 20 Bs/mes', img: 'assets/images/crunchyroll.webp' },
       { name: 'Spotify Premium', price: 'desde 20 Bs/mes', img: 'assets/images/spotify.webp' },
