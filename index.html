@@ -1,18 +1,98 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-BO">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cave Store | Streaming en Bolivia desde 20 Bs al mes</title>
-  <meta name="description" content="Cave Store: Netflix, Prime Video, YouTube Premium, Disney+, Paramount+, Crunchyroll y Spotify desde 20 Bs/mes. Arma tu combo y actívalo por WhatsApp en minutos.">
+  <title>Cave Store | Cuentas de streaming en Bolivia desde 20 Bs con pago QR</title>
+  <meta name="description" content="Compra Netflix, Prime Video, YouTube Premium, Disney+, Paramount+, Crunchyroll y Spotify en Bolivia desde 20 Bs al mes. Pagas con QR y lo activas por WhatsApp en minutos.">
+  <link rel="canonical" href="https://tihago2006.github.io/CaveStore/">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <!-- Search Console: pega aquí tu etiqueta de verificación, por ejemplo:
+  <meta name="google-site-verification" content="TU_CODIGO_AQUI"> -->
   <meta name="theme-color" content="#050505">
-  <meta property="og:title" content="Cave Store · Entretenimiento para disfrutar">
-  <meta property="og:description" content="Streaming, música y anime desde 20 Bs/mes. Arma tu combo y pídelo por WhatsApp.">
-  <meta property="og:image" content="assets/images/cave-store-combo-desktop.jpg">
+
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_BO">
+  <meta property="og:site_name" content="Cave Store">
+  <meta property="og:url" content="https://tihago2006.github.io/CaveStore/">
+  <meta property="og:title" content="Cave Store · Cuentas de streaming en Bolivia desde 20 Bs">
+  <meta property="og:description" content="Netflix, Disney+, Prime Video, Spotify y más desde 20 Bs al mes. Arma tu combo, paga con QR y actívalo por WhatsApp.">
+  <meta property="og:image" content="https://tihago2006.github.io/CaveStore/assets/images/cave-store-combo-desktop.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="896">
+  <meta property="og:image:alt" content="Combo de streaming Cave Store desde 20 Bs al mes">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%23050505'/><rect x='14' y='14' width='72' height='72' rx='18' fill='%23700305'/><text x='50' y='67' font-size='46' font-family='sans-serif' font-weight='900' fill='white' text-anchor='middle'>C</text></svg>">
 
-  <link rel="preload" as="image" href="assets/images/cave-store-cinematic-room.webp">
+  <link rel="preload" as="image" href="assets/images/cave-store-cinematic-room.webp" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/big-shoulders-display-latin-900-normal.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/manrope-latin-400-normal.woff2" crossorigin>
   <link rel="stylesheet" href="assets/css/styles.css">
+
+  <!-- Datos estructurados: ayudan a Google a entender la tienda, sus precios y sus preguntas -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "OnlineStore",
+        "@id": "https://tihago2006.github.io/CaveStore/#tienda",
+        "name": "Cave Store",
+        "url": "https://tihago2006.github.io/CaveStore/",
+        "image": "https://tihago2006.github.io/CaveStore/assets/images/cave-store-combo-desktop.jpg",
+        "description": "Venta de suscripciones de streaming, música y anime en Bolivia con pago por QR y activación por WhatsApp.",
+        "areaServed": { "@type": "Country", "name": "Bolivia" },
+        "currenciesAccepted": "BOB",
+        "paymentAccepted": "Código QR, transferencia bancaria",
+        "telephone": "+59157360383",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "ventas",
+          "telephone": "+59157360383",
+          "url": "https://wa.me/59157360383",
+          "availableLanguage": "es"
+        },
+        "sameAs": [
+          "https://www.instagram.com/cavestore07/",
+          "https://www.tiktok.com/@cave2978"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Cuentas de streaming en Bolivia",
+          "itemListElement": [
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Netflix Premium en Bolivia" }, "price": "35", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Prime Video en Bolivia" }, "price": "20", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "YouTube Premium en Bolivia" }, "price": "20", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Disney+ en Bolivia" }, "price": "25", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Paramount+ en Bolivia" }, "price": "20", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Crunchyroll en Bolivia" }, "price": "20", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Spotify Premium en Bolivia" }, "price": "20", "priceCurrency": "BOB" },
+            { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Combo de streaming a medida" }, "price": "40", "priceCurrency": "BOB" }
+          ]
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://tihago2006.github.io/CaveStore/#web",
+        "name": "Cave Store",
+        "url": "https://tihago2006.github.io/CaveStore/",
+        "inLanguage": "es-BO",
+        "publisher": { "@id": "https://tihago2006.github.io/CaveStore/#tienda" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          { "@type": "Question", "name": "¿Cómo puedo pagar mi cuenta de streaming?", "acceptedAnswer": { "@type": "Answer", "text": "Con transferencia bancaria o código QR simple, sin comisiones extra. Cuando nos escribes por WhatsApp te enviamos el QR." } },
+          { "@type": "Question", "name": "¿Cuánto tarda la activación?", "acceptedAnswer": { "@type": "Answer", "text": "Entre 5 y 15 minutos en horario habitual, después de verificar tu comprobante." } },
+          { "@type": "Question", "name": "¿Qué pasa si la cuenta deja de funcionar?", "acceptedAnswer": { "@type": "Answer", "text": "Tienes garantía durante todo el tiempo contratado. Si algo falla, te damos solución o reactivación sin costo." } },
+          { "@type": "Question", "name": "¿Puedo renovar la misma cuenta?", "acceptedAnswer": { "@type": "Answer", "text": "Sí. En la mayoría de servicios renuevas cada mes y conservas tu perfil, historial y listas. Te avisamos unos días antes del vencimiento." } },
+          { "@type": "Question", "name": "¿En qué dispositivos funciona?", "acceptedAnswer": { "@type": "Answer", "text": "PC, laptop, celulares Android y iPhone, tablets y Smart TV (TCL, Samsung, Xiaomi y más)." } }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
   <a class="skip-link" href="#servicios">Saltar al catálogo</a>
@@ -35,7 +115,7 @@
       </nav>
 
       <div class="nav-actions">
-        <a href="https://wa.me/" class="btn btn-primary btn-sm nav-cta" data-wa-action="default">Escríbenos</a>
+        <a href="https://wa.me/59157360383" class="btn btn-primary btn-sm nav-cta" data-wa-action="default">Escríbenos</a>
         <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-drawer">
           <span></span><span></span><span></span>
         </button>
@@ -52,12 +132,12 @@
       <li><a href="#faq" class="mobile-nav-link">Preguntas frecuentes</a></li>
       <li><a href="#contacto" class="mobile-nav-link">Contacto</a></li>
     </ul>
-    <a href="https://wa.me/" class="btn btn-whatsapp btn-lg btn-block" data-wa-action="default">Consultar por WhatsApp</a>
+    <a href="https://wa.me/59157360383" class="btn btn-whatsapp btn-lg btn-block" data-wa-action="default">Consultar por WhatsApp</a>
   </aside>
 
   <main>
     <!-- ================= HERO: la tele se enciende ================= -->
-    <section class="hero" id="inicio" aria-label="Cave Store">
+    <section class="hero" id="inicio">
       <div class="hero-stage">
         <div class="scene" aria-hidden="true">
           <img class="scene-img" src="assets/images/cave-store-cinematic-room.webp" alt="" width="1672" height="941">
@@ -78,11 +158,13 @@
       </div>
 
       <div class="container hero-content">
-        <p class="hero-brandline">Cave Store</p>
-        <h1 class="hero-title">Entretenimiento<br>para disfrutar</h1>
-        <p class="hero-sub">Películas, series, música y anime desde <strong>20 Bs al mes</strong>. Pides por WhatsApp, pagas con QR y en minutos ya estás viendo.</p>
+        <h1 class="hero-heading">
+          <span class="hero-brandline">Streaming en Bolivia</span>
+          <span class="hero-title">Entretenimiento<br>para disfrutar</span>
+        </h1>
+        <p class="hero-sub">Netflix, Disney+, Prime Video, Spotify y más desde <strong>20 Bs al mes</strong>. Pides por WhatsApp, pagas con QR y en minutos ya estás viendo.</p>
         <div class="hero-actions">
-          <a href="https://wa.me/" class="btn btn-whatsapp btn-lg" data-wa-action="default">
+          <a href="https://wa.me/59157360383" class="btn btn-whatsapp btn-lg" data-wa-action="default">
             <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.541 1.838.813 2.796.814 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.503-4.469 9.968-9.969 9.968-1.754 0-3.398-.456-4.831-1.251l-5.699 1.495 1.528-5.553c-.886-1.488-1.398-3.228-1.398-5.089 0-5.503 4.469-9.968 9.969-9.968 5.502 0 9.969 4.465 9.969 9.968z"/></svg>
             Pedir por WhatsApp
           </a>
@@ -113,8 +195,8 @@
     <section class="catalog-section" id="servicios">
       <div class="container">
         <header class="section-header">
-          <h2 class="section-title">Elige tu plataforma</h2>
-          <p class="section-subtitle">Perfiles privados o cuentas completas, listos para activar. Consulta disponibilidad por WhatsApp y empieza hoy.</p>
+          <h2 class="section-title">Cuentas de streaming en Bolivia</h2>
+          <p class="section-subtitle">Elige tu plataforma: perfiles privados o cuentas completas, listos para activar. Consulta disponibilidad por WhatsApp y empieza hoy.</p>
         </header>
 
         <div class="catalog-filters" role="group" aria-label="Filtrar catálogo">
@@ -139,7 +221,7 @@
               <li>Reposición si falla</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">35</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="netflix">Consultar Netflix</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="netflix">Consultar Netflix</a>
           </article>
 
           <article class="service-card" data-category="streaming">
@@ -155,7 +237,7 @@
               <li>Soporte todo el mes</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="prime">Consultar Prime Video</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="prime">Consultar Prime Video</a>
           </article>
 
           <article class="service-card" data-category="streaming music">
@@ -171,7 +253,7 @@
               <li>Incluye YouTube Music</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="youtube">Consultar YouTube</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="youtube">Consultar YouTube</a>
           </article>
 
           <article class="service-card" data-category="streaming">
@@ -187,7 +269,7 @@
               <li>Doblaje latino</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">25</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="disney">Consultar Disney+</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="disney">Consultar Disney+</a>
           </article>
 
           <article class="service-card" data-category="streaming">
@@ -203,7 +285,7 @@
               <li>Activación garantizada</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="paramount">Consultar Paramount+</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="paramount">Consultar Paramount+</a>
           </article>
 
           <article class="service-card" data-category="anime">
@@ -219,7 +301,7 @@
               <li>Ver sin internet</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="crunchyroll">Consultar Crunchyroll</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="crunchyroll">Consultar Crunchyroll</a>
           </article>
 
           <article class="service-card" data-category="music">
@@ -235,7 +317,7 @@
               <li>Se activa en tu cuenta</li>
             </ul>
             <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
-            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="spotify">Consultar Spotify</a>
+            <a href="https://wa.me/59157360383" class="btn btn-primary btn-block" data-wa-action="spotify">Consultar Spotify</a>
           </article>
 
           <article class="service-card card-combo" data-category="combos">
@@ -262,8 +344,8 @@
       <div class="container">
         <div class="combo-panel">
           <div class="combo-builder">
-            <h2 class="section-title">Arma tu combo</h2>
-            <p class="section-subtitle">Toca las plataformas que quieres. Te enviamos el mensaje listo a WhatsApp y te pasamos el precio especial del combo.</p>
+            <h2 class="section-title">Arma tu combo de streaming</h2>
+            <p class="section-subtitle">Toca las plataformas que quieres y ahorra pagando todo junto en bolivianos. Te enviamos el mensaje listo a WhatsApp y te pasamos el precio especial del combo.</p>
 
             <fieldset class="combo-options">
               <legend class="sr-only">Plataformas para tu combo</legend>
@@ -281,7 +363,7 @@
               <p class="combo-note" id="combo-note">Elige al menos dos para armar un combo.</p>
             </div>
 
-            <a href="https://wa.me/" class="btn btn-whatsapp btn-lg btn-block is-disabled" id="combo-send" data-wa-action="combo" aria-disabled="true">
+            <a href="https://wa.me/59157360383" class="btn btn-whatsapp btn-lg btn-block is-disabled" id="combo-send" data-wa-action="combo" aria-disabled="true">
               <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.541 1.838.813 2.796.814 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.503-4.469 9.968-9.969 9.968-1.754 0-3.398-.456-4.831-1.251l-5.699 1.495 1.528-5.553c-.886-1.488-1.398-3.228-1.398-5.089 0-5.503 4.469-9.968 9.969-9.968 5.502 0 9.969 4.465 9.969 9.968z"/></svg>
               Pedir este combo
             </a>
@@ -290,7 +372,7 @@
           <picture class="combo-visual">
             <source media="(max-width: 700px)" srcset="assets/images/cave-store-combo-mobile.webp" type="image/webp">
             <source srcset="assets/images/cave-store-combo-desktop.webp" type="image/webp">
-            <img src="assets/images/cave-store-combo-desktop.jpg" alt="Adquiere tu combo Cave Store desde 20 Bs al mes" width="1200" height="896" loading="lazy">
+            <img src="assets/images/cave-store-combo-desktop.jpg" alt="Combo de streaming Cave Store con Netflix, Prime Video, YouTube y Disney+ desde 20 Bs al mes" width="1200" height="896" loading="lazy">
           </picture>
         </div>
       </div>
@@ -300,8 +382,8 @@
     <section class="steps-section" id="como-funciona">
       <div class="container">
         <header class="section-header">
-          <h2 class="section-title">Así de fácil es comprar</h2>
-          <p class="section-subtitle">Tres pasos y estás viendo en tu Smart TV, celular o laptop.</p>
+          <h2 class="section-title">Cómo comprar por WhatsApp y QR</h2>
+          <p class="section-subtitle">Así de fácil: tres pasos y estás viendo en tu Smart TV, celular o laptop.</p>
         </header>
 
         <ol class="steps" id="steps">
@@ -344,13 +426,13 @@
       <div class="container faq-layout">
         <header class="faq-head">
           <h2 class="section-title">Preguntas frecuentes</h2>
-          <p class="section-subtitle">¿Tienes otra duda? Escríbenos y te respondemos al toque.</p>
+          <p class="section-subtitle">Lo que más nos preguntan sobre pagos, activación y garantía de tus cuentas. ¿Tienes otra duda? Escríbenos y te respondemos al toque.</p>
         </header>
 
         <div class="faq-accordion">
           <div class="faq-item">
             <button class="faq-question-btn" aria-expanded="false">
-              <span>¿Cómo puedo pagar?</span>
+              <span>¿Cómo puedo pagar mi cuenta de streaming?</span>
               <span class="faq-icon" aria-hidden="true"></span>
             </button>
             <div class="faq-answer"><div class="faq-answer-inner">Con transferencia bancaria o código QR simple, sin comisiones extra. Cuando nos escribes por WhatsApp te enviamos el QR.</div></div>
@@ -392,8 +474,8 @@
       <div class="container">
         <div class="contact-card">
           <h2 class="contact-title">¿Qué vas a ver esta noche?</h2>
-          <p class="contact-subtitle">Escríbenos y te ayudamos a activar tu plataforma o armar tu combo en minutos.</p>
-          <a href="https://wa.me/" class="btn btn-whatsapp btn-lg" data-wa-action="default">
+          <p class="contact-subtitle">Escríbenos y te ayudamos a activar tu cuenta de Netflix, Disney+, Spotify o la que quieras, o a armar tu combo, en minutos.</p>
+          <a href="https://wa.me/59157360383" class="btn btn-whatsapp btn-lg" data-wa-action="default">
             <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.541 1.838.813 2.796.814 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.503-4.469 9.968-9.969 9.968-1.754 0-3.398-.456-4.831-1.251l-5.699 1.495 1.528-5.553c-.886-1.488-1.398-3.228-1.398-5.089 0-5.503 4.469-9.968 9.969-9.968 5.502 0 9.969 4.465 9.969 9.968z"/></svg>
             Chatear por WhatsApp
           </a>
@@ -412,7 +494,7 @@
             <span class="logo-icon" aria-hidden="true">C</span>
             <span class="logo-word">Cave<b>Store</b></span>
           </a>
-          <p class="footer-brand-desc">Suscripciones de streaming, música y anime en Bolivia. Todo desde tu casa.</p>
+          <p class="footer-brand-desc">Cuentas de streaming, música y anime en Bolivia con pago por QR. Todo desde tu casa.</p>
         </div>
         <div>
           <h3 class="footer-heading">Navegación</h3>
@@ -426,7 +508,7 @@
         <div>
           <h3 class="footer-heading">Síguenos</h3>
           <div class="footer-social-links">
-            <a href="https://wa.me/" class="social-icon-btn" aria-label="WhatsApp" data-wa-action="default">
+            <a href="https://wa.me/59157360383" class="social-icon-btn" aria-label="WhatsApp" data-wa-action="default">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.541 1.838.813 2.796.814 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.503-4.469 9.968-9.969 9.968-1.754 0-3.398-.456-4.831-1.251l-5.699 1.495 1.528-5.553c-.886-1.488-1.398-3.228-1.398-5.089 0-5.503 4.469-9.968 9.969-9.968 5.502 0 9.969 4.465 9.969 9.968z"/></svg>
             </a>
             <a href="https://www.instagram.com/cavestore07/" class="social-icon-btn" aria-label="Instagram @cavestore07" target="_blank" rel="noopener noreferrer">
@@ -448,7 +530,7 @@
     </div>
   </footer>
 
-  <a href="https://wa.me/" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp" data-wa-action="default">
+  <a href="https://wa.me/59157360383" class="floating-whatsapp-btn" aria-label="Contactar por WhatsApp" data-wa-action="default">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.541 1.838.813 2.796.814 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.503-4.469 9.968-9.969 9.968-1.754 0-3.398-.456-4.831-1.251l-5.699 1.495 1.528-5.553c-.886-1.488-1.398-3.228-1.398-5.089 0-5.503 4.469-9.968 9.969-9.968 5.502 0 9.969 4.465 9.969 9.968z"/></svg>
   </a>
 
