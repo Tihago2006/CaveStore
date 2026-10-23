@@ -580,6 +580,16 @@ h1, h2, h3 { color: #fff; line-height: 1.1; }
   .step-title { align-self: end; }
 }
 
+/* Pantallas anchas y bajitas (laptops 1366x768, monitores ultra anchos):
+   la tele va arriba y el texto debajo, para que no se encimen */
+@media (min-width: 821px) and (min-aspect-ratio: 7/4) {
+  .hero { min-height: auto; }
+  .hero-stage { position: relative; inset: auto; height: calc(96px + 22.7vw); margin-bottom: -1.5rem; }
+  .scene { top: 0; width: 100%; transform: translate(-50%, calc(72px - 12.9%)); }
+  .hero-shade { background: linear-gradient(180deg, rgba(5,5,5,.6) 0%, transparent 18%, transparent 70%, var(--ink) 100%); }
+  .hero-title { font-size: clamp(3rem, 5.6vw, 5.4rem); }
+}
+
 @media (max-width: 520px) {
   .container { padding-inline: 1rem; }
   .hero-actions { width: 100%; flex-direction: column; }
