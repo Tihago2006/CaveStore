@@ -575,7 +575,7 @@ h1, h2, h3 { color: #fff; line-height: 1.1; }
    ========================================================================== */
 @media (max-width: 960px) {
   .combo-panel { grid-template-columns: 1fr; }
-  .combo-visual { order: -1; }
+  .combo-visual { display: none; }
   .faq-layout { grid-template-columns: 1fr; }
   .faq-head { position: static; }
   .trust-row { grid-template-columns: 1fr; }
@@ -606,7 +606,7 @@ h1, h2, h3 { color: #fff; line-height: 1.1; }
 
 /* Pantallas anchas y bajitas (laptops 1366x768, monitores ultra anchos):
    la tele va arriba y el texto debajo, para que no se encimen */
-@media (min-width: 821px) and (min-aspect-ratio: 7/4) {
+@media (min-width: 821px) and (min-aspect-ratio: 3/2) {
   .hero { min-height: auto; }
   .hero-stage { position: relative; inset: auto; height: calc(96px + 22.7vw); margin-bottom: -1.5rem; }
   .scene { top: 0; width: 100%; transform: translate(-50%, calc(72px - 12.9%)); }
