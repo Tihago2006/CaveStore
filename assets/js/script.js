@@ -37,7 +37,26 @@
       { name: 'Spotify Premium', price: 'desde 20 Bs/mes', img: 'assets/images/spotify.webp' },
       { name: 'Arma tu combo', price: 'precio especial', img: 'assets/images/combo.webp' }
     ],
-    channelSeconds: 3.2
+    channelSeconds: 3.2,
+
+    /* ----- Precios que dependen del dólar (solo Netflix y Disney+) -----
+       Tus precios de abajo valen con el dólar de "dolarDeTusPrecios".
+       Si el dólar del día sube, el precio sube lo mismo que te sube el
+       costo por cliente, redondeado a 5 Bs. Si baja, se queda igual. */
+    dolar: {
+      dolarDeTusPrecios: 11.75, // dólar de banco con el que pusiste tus precios
+      automatico: true,         // true = consulta el dólar del día en internet
+      redondeo: 5,              // los aumentos van de 5 en 5 Bs
+      descuentoCombo: 5         // Bs de descuento por cada plataforma extra en combo
+    },
+    usd: {
+      netflix: { nombre: 'Netflix Premium', costoUSD: 8.99,
+        privado:    { precio: 35, clientes: 5 },
+        compartido: { precio: 27, clientes: 6 } },
+      disney:  { nombre: 'Disney+', costoUSD: 18.99,
+        privado:    { precio: 40, clientes: 7 },
+        compartido: { precio: 35, clientes: 8 } }
+    }
   };
 
   const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -55,6 +74,85 @@
       btn.target = '_blank';
       btn.rel = 'noopener noreferrer';
     });
+  }
+
+  /* 2b. Precios según el dólar (Netflix y Disney+) ------------------------ */
+  const PRECIOS = {};
+
+  function calcularPrecios(dolar) {
+    const r = CONFIG.dolar.redondeo || 1;
+    const base = CONFIG.dolar.dolarDeTusPrecios;
+    Object.entries(CONFIG.usd).forEach(([key, s]) => {
+      ['privado', 'compartido'].forEach((tipo) => {
+        const t = s[tipo];
+        const subida = Math.max(0, (s.costoUSD * (dolar - base)) / t.clientes);
+        PRECIOS[key + '.' + tipo] = t.precio + Math.round(subida / r) * r;
+      });
+    });
+  }
+
+  function aplicarPrecios() {
+    $$('[data-precio]').forEach((el) => { const v = PRECIOS[el.dataset.precio]; if (v) el.textContent = v + ' Bs'; });
+    $$('[data-precio-num]').forEach((el) => { const v = PRECIOS[el.dataset.precioNum]; if (v) el.textContent = v; });
+    $$('[data-usd]').forEach((el) => { const v = PRECIOS[el.dataset.usd]; if (v) el.dataset.price = v; });
+
+    // Combos listos: suma por separado y descuento por plataforma extra
+    const chips = $$('.combo-options input');
+    $$('.combo-preset[data-auto]').forEach((b) => {
+      const names = b.dataset.combo.split('|');
+      const separado = names.reduce((t, n) => {
+        const i = chips.find((c) => c.value === n);
+        return t + Number(i ? i.dataset.price : 0);
+      }, 0);
+      const precio = separado - (names.length - 1) * CONFIG.dolar.descuentoCombo;
+      b.dataset.price = precio; b.dataset.separate = separado;
+      const cp = $('.cp-price', b), old = $('s', b);
+      if (cp) cp.textContent = precio + ' Bs';
+      if (old) old.textContent = separado + ' Bs';
+    });
+
+    // Mensajes de WhatsApp y la tele del inicio
+    const n = PRECIOS;
+    CONFIG.serviceMessages.netflix = `¡Hola Cave Store! Quiero Netflix Premium. ¿Tienen perfil privado (${n['netflix.privado']} Bs) o compartido (${n['netflix.compartido']} Bs) disponible?`;
+    CONFIG.serviceMessages.disney = `¡Hola Cave Store! Quiero un perfil de Disney+ (desde ${n['disney.compartido']} Bs). ¿Tienen disponible?`;
+    CONFIG.channels.forEach((c) => {
+      if (c.name === CONFIG.usd.netflix.nombre) c.price = `desde ${n['netflix.compartido']} Bs/mes`;
+      if (c.name === CONFIG.usd.disney.nombre) c.price = `desde ${n['disney.compartido']} Bs/mes`;
+    });
+    const tvName = $('#tv-name'), tvPrice = $('#tv-price');
+    const ch = tvName && CONFIG.channels.find((c) => c.name === tvName.textContent);
+    if (ch && tvPrice) tvPrice.textContent = ch.price;
+  }
+
+  function initPreciosDolar() {
+    calcularPrecios(CONFIG.dolar.dolarDeTusPrecios);
+    aplicarPrecios();
+    if (!CONFIG.dolar.automatico || !window.fetch) return;
+
+    // Dólar del día (gratis, se guarda 12 h para no consultar a cada rato).
+    // Si el dólar baja, tus precios se quedan como los pusiste.
+    const KEY = 'cave_dolar', DOCE_HORAS = 12 * 60 * 60 * 1000;
+    const usar = (tasa) => {
+      const dolar = Math.max(Number(tasa) || 0, CONFIG.dolar.dolarDeTusPrecios);
+      calcularPrecios(dolar);
+      aplicarPrecios();
+      initWhatsApp();
+      document.dispatchEvent(new Event('cave:precios'));
+    };
+    try {
+      const c = JSON.parse(localStorage.getItem(KEY) || 'null');
+      if (c && Date.now() - c.t < DOCE_HORAS) { usar(c.v); return; }
+    } catch (e) { /* sin almacenamiento: seguimos */ }
+
+    fetch('https://open.er-api.com/v6/latest/USD')
+      .then((r) => r.json())
+      .then((d) => {
+        const v = d && d.rates && d.rates.BOB;
+        if (!v) return;
+        try { localStorage.setItem(KEY, JSON.stringify({ v, t: Date.now() })); } catch (e) { /* ok */ }
+        usar(v);
+      })
+      .catch(() => { /* sin internet: se quedan tus precios */ });
   }
 
   /* 3. Escena del inicio: ajustar tamaño y encender la tele --------------- */
@@ -253,6 +351,7 @@
       send.href = waUrl(msg);
     };
 
+    document.addEventListener('cave:precios', () => update());
     inputs.forEach((i) => i.addEventListener('change', () => {
       const chip = i.closest('.combo-chip');
       chip.classList.remove('pop'); void chip.offsetWidth; chip.classList.add('pop');
@@ -308,6 +407,7 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     const year = $('#year'); if (year) year.textContent = new Date().getFullYear();
+    initPreciosDolar();
     initWhatsApp();
     initHeroTV();
     initMarquee();
