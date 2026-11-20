@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cave Store | Streaming en Bolivia desde 20 Bs al mes</title>
-  <meta name="description" content="Cave Store: Netflix, Prime Video, YouTube Premium, Disney+, Paramount+, Crunchyroll y Spotify desde 20 Bs/mes. Arma tu combo y actívalo por WhatsApp en minutos.">
+  <title>Cave Store | Streaming en Bolivia desde 15 Bs al mes</title>
+  <meta name="description" content="Cave Store: Netflix, HBO Max, Prime Video, YouTube Premium, Disney+, Paramount+, Crunchyroll y Spotify desde 15 Bs/mes. Ofertas de Black Friday. Arma tu combo y actívalo por WhatsApp en minutos.">
   <meta name="theme-color" content="#050505">
   <meta property="og:title" content="Cave Store · Entretenimiento para disfrutar">
-  <meta property="og:description" content="Streaming, música y anime desde 20 Bs/mes. Arma tu combo y pídelo por WhatsApp.">
+  <meta property="og:description" content="Streaming, música y anime desde 15 Bs/mes. Ofertas de Black Friday. Arma tu combo y pídelo por WhatsApp.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://tihago2006.github.io/CaveStore/">
   <meta property="og:image" content="https://tihago2006.github.io/CaveStore/assets/images/cave-store-combo-desktop.jpg">
@@ -32,6 +32,7 @@
 
       <nav aria-label="Navegación principal">
         <ul class="nav-menu">
+          <li><a href="#black-friday" class="nav-link nav-bf">Black Friday</a></li>
           <li><a href="#servicios" class="nav-link">Catálogo</a></li>
           <li><a href="#combo" class="nav-link">Arma tu combo</a></li>
           <li><a href="#como-funciona" class="nav-link">Cómo comprar</a></li>
@@ -51,6 +52,7 @@
   <div class="mobile-drawer-overlay" aria-hidden="true"></div>
   <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menú móvil">
     <ul class="mobile-nav-links">
+      <li><a href="#black-friday" class="mobile-nav-link">Black Friday 🔥</a></li>
       <li><a href="#servicios" class="mobile-nav-link">Catálogo</a></li>
       <li><a href="#combo" class="mobile-nav-link">Arma tu combo</a></li>
       <li><a href="#como-funciona" class="mobile-nav-link">Cómo comprar</a></li>
@@ -85,7 +87,7 @@
       <div class="container hero-content">
         <p class="hero-brandline">Cave Store</p>
         <h1 class="hero-title">Entretenimiento<br>para disfrutar</h1>
-        <p class="hero-sub">Películas, series, música y anime desde <strong>20 Bs al mes</strong>. Pides por WhatsApp, pagas con QR y en minutos ya estás viendo.</p>
+        <p class="hero-sub">Películas, series, música y anime desde <strong>15 Bs al mes</strong>. Pides por WhatsApp, pagas con QR y en minutos ya estás viendo.</p>
         <div class="hero-actions">
           <a href="https://wa.me/" class="btn btn-whatsapp btn-lg" data-wa-action="default">
             <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.664-.699c.981.541 1.838.813 2.796.814 3.179 0 5.767-2.587 5.768-5.766.001-3.18-2.585-5.766-5.768-5.766zm9.969 5.768c0 5.503-4.469 9.968-9.969 9.968-1.754 0-3.398-.456-4.831-1.251l-5.699 1.495 1.528-5.553c-.886-1.488-1.398-3.228-1.398-5.089 0-5.503 4.469-9.968 9.969-9.968 5.502 0 9.969 4.465 9.969 9.968z"/></svg>
@@ -104,6 +106,7 @@
       <div class="marquee-track">
         <ul class="marquee-list">
           <li><img src="assets/images/netflix.webp" alt="" width="40" height="40" loading="lazy">Netflix</li>
+          <li><span class="mq-badge" aria-hidden="true">HBO</span>HBO Max</li>
           <li><img src="assets/images/prime.webp" alt="" width="40" height="40" loading="lazy">Prime Video</li>
           <li><img src="assets/images/youtube.webp" alt="" width="40" height="40" loading="lazy">YouTube Premium</li>
           <li><img src="assets/images/disney.webp" alt="" width="40" height="40" loading="lazy">Disney+</li>
@@ -111,6 +114,55 @@
           <li><img src="assets/images/crunchyroll.webp" alt="" width="40" height="40" loading="lazy">Crunchyroll</li>
           <li><img src="assets/images/spotify.webp" alt="" width="40" height="40" loading="lazy">Spotify</li>
         </ul>
+      </div>
+    </section>
+
+    <!-- ================= BLACK FRIDAY (se oculta sola al terminar) ================= -->
+    <section class="bf-section" id="black-friday" data-bf-hasta="2026-11-30T23:59:00-04:00" aria-labelledby="bf-title">
+      <div class="container">
+        <div class="bf-head">
+          <p class="bf-kicker">Solo por pocos días</p>
+          <h2 class="bf-title" id="bf-title">Black <span>Friday</span></h2>
+          <p class="bf-sub">Combos con precio de locura. Pides por WhatsApp, pagas con QR y en minutos ya estás viendo.</p>
+          <div class="bf-countdown" aria-live="off">
+            <span class="bf-label">Termina en</span>
+            <div class="bf-time"><b id="bf-d">00</b><small>días</small></div>
+            <div class="bf-time"><b id="bf-h">00</b><small>horas</small></div>
+            <div class="bf-time"><b id="bf-m">00</b><small>min</small></div>
+            <div class="bf-time"><b id="bf-s">00</b><small>seg</small></div>
+          </div>
+        </div>
+
+        <div class="bf-grid">
+          <article class="bf-card is-star">
+            <span class="bf-badge">-20%</span>
+            <span class="bf-ribbon">El más pedido</span>
+            <div class="bf-icons"><span class="icon-badge">HBO</span><img src="assets/images/crunchyroll.webp" alt="" width="52" height="52" loading="lazy"></div>
+            <h3 class="bf-name">HBO Max + Crunchyroll</h3>
+            <p class="bf-desc">Perfiles privados. Series, cine y todo el anime en un solo pago.</p>
+            <div class="bf-price"><s>50 Bs</s><strong>40</strong><span>Bs/mes</span></div>
+            <a href="https://wa.me/" class="btn btn-primary btn-block bf-btn" data-wa-action="bf1">¡Lo quiero!</a>
+          </article>
+
+          <article class="bf-card">
+            <span class="bf-badge">-17%</span>
+            <div class="bf-icons"><span class="icon-badge">HBO</span><img src="assets/images/crunchyroll.webp" alt="" width="52" height="52" loading="lazy"></div>
+            <h3 class="bf-name">HBO Max + Crunchyroll</h3>
+            <p class="bf-desc">Versión compartida, el precio más bajo para no perderte nada.</p>
+            <div class="bf-price"><s>35 Bs</s><strong>29</strong><span>Bs/mes</span></div>
+            <a href="https://wa.me/" class="btn btn-primary btn-block bf-btn" data-wa-action="bf2">¡Lo quiero!</a>
+          </article>
+
+          <article class="bf-card">
+            <span class="bf-badge">-18%</span>
+            <div class="bf-icons"><span class="icon-badge">HBO</span><img src="assets/images/prime.webp" alt="" width="52" height="52" loading="lazy"></div>
+            <h3 class="bf-name">HBO Max + Prime Video</h3>
+            <p class="bf-desc">Perfiles privados. Dos catálogos enormes de series y películas.</p>
+            <div class="bf-price"><s>60 Bs</s><strong>49</strong><span>Bs/mes</span></div>
+            <a href="https://wa.me/" class="btn btn-primary btn-block bf-btn" data-wa-action="bf3">¡Lo quiero!</a>
+          </article>
+        </div>
+        <p class="bf-fine">Precios por mes. Cupos limitados por cuenta: confirma disponibilidad antes de pagar.</p>
       </div>
     </section>
 
@@ -150,6 +202,25 @@
             <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="netflix">Consultar Netflix</a>
           </article>
 
+          <article class="service-card is-featured" data-category="streaming">
+            <div class="card-top">
+              <span class="service-icon icon-badge" aria-hidden="true">HBO</span>
+              <span class="service-tag hot">Nuevo</span>
+            </div>
+            <h3 class="service-name">HBO Max</h3>
+            <p class="service-desc">Series de HBO, cine de Warner, DC y estrenos en 4K. Plan Platino.</p>
+            <ul class="price-options">
+              <li><span>Perfil privado</span><b>30 Bs</b></li>
+              <li><span>Perfil compartido<small>con otra persona</small></span><b>20 Bs</b></li>
+            </ul>
+            <ul class="service-features">
+              <li>Calidad 4K</li>
+              <li>Reposición si falla</li>
+            </ul>
+            <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
+            <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="hbo">Consultar HBO Max</a>
+          </article>
+
           <article class="service-card" data-category="streaming">
             <div class="card-top">
               <img src="assets/images/prime.webp" alt="" class="service-icon" width="58" height="58" loading="lazy">
@@ -157,6 +228,10 @@
             </div>
             <h3 class="service-name">Prime Video</h3>
             <p class="service-desc">Amazon Originals, cine internacional y estrenos en Full HD y 4K.</p>
+            <ul class="price-options">
+              <li><span>Perfil privado</span><b>30 Bs</b></li>
+              <li><span>Perfil compartido<small>con otra persona</small></span><b>20 Bs</b></li>
+            </ul>
             <ul class="service-features">
               <li>Hasta 3 pantallas</li>
               <li>Descargas sin conexión</li>
@@ -221,12 +296,16 @@
             </div>
             <h3 class="service-name">Crunchyroll</h3>
             <p class="service-desc">El catálogo de anime más grande, con episodios una hora después de Japón.</p>
+            <ul class="price-options">
+              <li><span>Perfil privado</span><b>20 Bs</b></li>
+              <li><span>Perfil compartido<small>con otra persona</small></span><b>15 Bs</b></li>
+            </ul>
             <ul class="service-features">
               <li>Simulcast con Japón</li>
               <li>1080p sin publicidad</li>
               <li>Ver sin internet</li>
             </ul>
-            <div class="price"><span class="price-from">desde</span><span class="price-amount">20</span><span class="price-unit">Bs/mes</span></div>
+            <div class="price"><span class="price-from">desde</span><span class="price-amount">15</span><span class="price-unit">Bs/mes</span></div>
             <a href="https://wa.me/" class="btn btn-primary btn-block" data-wa-action="crunchyroll">Consultar Crunchyroll</a>
           </article>
 
@@ -292,6 +371,7 @@
             <fieldset class="combo-options">
               <legend class="sr-only">Plataformas para tu combo</legend>
               <label class="combo-chip"><input type="checkbox" value="Netflix" data-price="33" data-usd="netflix.privado"><img src="assets/images/netflix.webp" alt="" width="36" height="36" loading="lazy"><span>Netflix</span></label>
+              <label class="combo-chip"><input type="checkbox" value="HBO Max" data-price="20"><span class="chip-badge" aria-hidden="true">HBO</span><span>HBO Max</span></label>
               <label class="combo-chip"><input type="checkbox" value="Prime Video" data-price="20"><img src="assets/images/prime.webp" alt="" width="36" height="36" loading="lazy"><span>Prime Video</span></label>
               <label class="combo-chip"><input type="checkbox" value="YouTube Premium" data-price="20"><img src="assets/images/youtube.webp" alt="" width="36" height="36" loading="lazy"><span>YouTube</span></label>
               <label class="combo-chip"><input type="checkbox" value="Disney+" data-price="30" data-usd="disney.compartido"><img src="assets/images/disney.webp" alt="" width="36" height="36" loading="lazy"><span>Disney+</span></label>
@@ -463,7 +543,7 @@
         </div>
       </div>
 
-      <p class="footer-disclaimer">Cave Store es un servicio independiente de gestión y venta de suscripciones digitales. Netflix, Prime Video, YouTube Premium, Disney+, Paramount+, Crunchyroll y Spotify son marcas de sus respectivos dueños y se mencionan solo con fines informativos. Cave Store no tiene afiliación ni patrocinio oficial de dichas empresas.</p>
+      <p class="footer-disclaimer">Cave Store es un servicio independiente de gestión y venta de suscripciones digitales. Netflix, HBO Max, Prime Video, YouTube Premium, Disney+, Paramount+, Crunchyroll y Spotify son marcas de sus respectivos dueños y se mencionan solo con fines informativos. Cave Store no tiene afiliación ni patrocinio oficial de dichas empresas.</p>
 
       <div class="footer-bottom">
         <span>&copy; <span id="year">2026</span> Cave Store. Todos los derechos reservados.</span>

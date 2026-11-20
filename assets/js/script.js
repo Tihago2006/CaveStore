@@ -17,12 +17,16 @@
     comboMessage: '¡Hola Cave Store! Quiero armar un combo de streaming. ¿Me pasan el precio?',
 
     serviceMessages: {
+      hbo: '¡Hola Cave Store! Quiero HBO Max. ¿Tienen perfil privado (30 Bs) o compartido (20 Bs) disponible?',
+      bf1: '¡Hola Cave Store! Vi la oferta de Black Friday y quiero el combo HBO Max + Crunchyroll privado a 40 Bs. ¿Hay cupo?',
+      bf2: '¡Hola Cave Store! Vi la oferta de Black Friday y quiero el combo HBO Max + Crunchyroll compartido a 29 Bs. ¿Hay cupo?',
+      bf3: '¡Hola Cave Store! Vi la oferta de Black Friday y quiero el combo HBO Max + Prime Video privado a 49 Bs. ¿Hay cupo?',
       netflix: '¡Hola Cave Store! Quiero Netflix Premium. ¿Tienen perfil privado (33 Bs) o compartido (27 Bs) disponible?',
-      prime: '¡Hola Cave Store! Quiero consultar disponibilidad de Prime Video.',
+      prime: '¡Hola Cave Store! Quiero Prime Video. ¿Tienen perfil privado (30 Bs) o compartido (20 Bs) disponible?',
       youtube: '¡Hola Cave Store! Quiero consultar disponibilidad de YouTube Premium.',
       disney: '¡Hola Cave Store! Quiero un perfil de Disney+ (30 Bs). ¿Tienen disponible?',
       paramount: '¡Hola Cave Store! Quiero consultar disponibilidad de Paramount+.',
-      crunchyroll: '¡Hola Cave Store! Quiero consultar disponibilidad de Crunchyroll.',
+      crunchyroll: '¡Hola Cave Store! Quiero Crunchyroll. ¿Tienen perfil privado (20 Bs) o compartido (15 Bs) disponible?',
       spotify: '¡Hola Cave Store! Quiero consultar disponibilidad de Spotify Premium.'
     },
 
@@ -33,7 +37,7 @@
       { name: 'YouTube Premium', price: 'desde 20 Bs/mes', img: 'assets/images/youtube.webp' },
       { name: 'Disney+', price: 'desde 30 Bs/mes', img: 'assets/images/disney.webp' },
       { name: 'Paramount+', price: 'desde 20 Bs/mes', img: 'assets/images/paramount.webp' },
-      { name: 'Crunchyroll', price: 'desde 20 Bs/mes', img: 'assets/images/crunchyroll.webp' },
+      { name: 'Crunchyroll', price: 'desde 15 Bs/mes', img: 'assets/images/crunchyroll.webp' },
       { name: 'Spotify Premium', price: 'desde 20 Bs/mes', img: 'assets/images/spotify.webp' },
       { name: 'Arma tu combo', price: 'precio especial', img: 'assets/images/combo.webp' }
     ],
@@ -153,6 +157,27 @@
         usar(v);
       })
       .catch(() => { /* sin internet: se quedan tus precios */ });
+  }
+
+  /* 2c. Cuenta regresiva de Black Friday (se oculta sola al terminar) ---- */
+  function initBlackFriday() {
+    const sec = $('#black-friday');
+    if (!sec) return;
+    const fin = new Date(sec.dataset.bfHasta).getTime();
+    const ocultar = () => { sec.hidden = true; $$('a[href="#black-friday"]').forEach((a) => a.closest('li')?.remove()); };
+    if (!fin || Date.now() >= fin) { ocultar(); return; }
+    const d = $('#bf-d'), h = $('#bf-h'), m = $('#bf-m'), s = $('#bf-s');
+    const dos = (n) => String(n).padStart(2, '0');
+    const tick = () => {
+      const t = Math.max(0, fin - Date.now());
+      if (t === 0) { clearInterval(timer); ocultar(); return; }
+      d.textContent = dos(Math.floor(t / 864e5));
+      h.textContent = dos(Math.floor(t / 36e5) % 24);
+      m.textContent = dos(Math.floor(t / 6e4) % 60);
+      s.textContent = dos(Math.floor(t / 1e3) % 60);
+    };
+    const timer = setInterval(tick, 1000);
+    tick();
   }
 
   /* 3. Escena del inicio: ajustar tamaño y encender la tele --------------- */
@@ -408,6 +433,7 @@
   document.addEventListener('DOMContentLoaded', () => {
     const year = $('#year'); if (year) year.textContent = new Date().getFullYear();
     initPreciosDolar();
+    initBlackFriday();
     initWhatsApp();
     initHeroTV();
     initMarquee();
